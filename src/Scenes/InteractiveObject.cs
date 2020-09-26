@@ -13,6 +13,6 @@ namespace SillyTextAdventure.Scenes
         public string Name { get; }
         public string Description { get; }
 
-        public InteractionResult[] InteractionResults { get; }
+        public InteractionResult[] InteractionResults { get; set; }
     }
 }

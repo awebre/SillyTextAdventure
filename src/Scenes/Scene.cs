@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace SillyTextAdventure.Scenes
 {
@@ -11,6 +12,11 @@ namespace SillyTextAdventure.Scenes
             InteractiveObject[] interactiveObjects = null) : base(name, description, interactionResults)
         {
             SceneObjects = interactiveObjects;
+        }
+
+        public void AddInteractions(InteractionResult[] interactions)
+        {
+            InteractionResults = InteractionResults.Concat(interactions).ToArray();
         }
 
         public InteractiveObject[] SceneObjects { get; }
