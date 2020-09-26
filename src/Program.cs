@@ -18,7 +18,7 @@ namespace SillyTextAdventure
             var top = Application.Top;
             var topFrame = top.Frame;
 
-            var window = new Window("Hello")
+            var window = new Window("Welcome to Silly Text Adventure!")
             {
                 X = 0,
                 Y = 1,
