@@ -1,5 +1,6 @@
 ﻿using System;
 using Terminal.Gui;
+using SillyTextAdventure.Scenes;
 
 namespace SillyTextAdventure
 {
@@ -33,6 +34,9 @@ namespace SillyTextAdventure
                     }})
                 })
             });
+
+            SceneManager.Init(new Scene("init scene", "You find yourself awake in a clearing, surrounded by forest. Where will you explore first?", null));
+            window.Add(new Label(SceneManager.CurrentScene.Description));
 
             top.Add(window, menuBar);
             top.Add(menuBar);
