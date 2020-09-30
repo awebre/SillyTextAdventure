@@ -11,8 +11,13 @@ namespace SillyTextAdventure.Scenes
             {
                 throw new InvalidOperationException("Init can only be called once.");
             }
-
-            CurrentScene = initialScene;
+            var name = "Dave's Init Scene";
+            var description = "You have entered Dave's Lair.";
+            var interactionResults = new InteractionResult[]{
+                new InteractionResult("west", "There is nothing to the west, you go back to the center of the room.", null),
+                new InteractionResult("east", "To the east of the room is Dave's Laptop, it's password protected.", new InteractiveObject("Dave's Laptop", "It's password protected", null))
+            };
+            CurrentScene = new Scene(name, description, interactionResults);
         }
 
         public static InteractionResult AttemptInteraction(string action)
