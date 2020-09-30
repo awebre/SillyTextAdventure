@@ -9,5 +9,8 @@
       <HintPath>gui.cs\Terminal.Gui.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NStack.Core" Version="0.14.0" />
+  </ItemGroup>
 
 </Project>
