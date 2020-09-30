@@ -8,7 +8,7 @@ namespace SillyTextAdventure
 
         static bool Quit()
         {
-            var answer = MessageBox.Query(50, 7, "Quit Game", "Are you sure you want to quit the game?", "Yes", "No")
+            var answer = MessageBox.Query(50, 7, "Quit Game", "Are you sure you want to quit the game?", "Yes", "No");
             return answer == 0;
         }
 
