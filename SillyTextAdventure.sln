@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SillyTextAdventure", "src\SillyTextAdventure.csproj", "{6764029D-5270-4CA1-AE18-5E0E7045FC10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5E7E9411-577E-47B2-8011-F0D7A588F917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SillyTextAdventure.UnitTests", "tests\SillyTextAdventure.UnitTests\SillyTextAdventure.UnitTests.csproj", "{B3889293-E83D-44F0-8F49-161FD4D63569}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,20 @@ Global
 		{6764029D-5270-4CA1-AE18-5E0E7045FC10}.Release|x64.Build.0 = Release|Any CPU
 		{6764029D-5270-4CA1-AE18-5E0E7045FC10}.Release|x86.ActiveCfg = Release|Any CPU
 		{6764029D-5270-4CA1-AE18-5E0E7045FC10}.Release|x86.Build.0 = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|x64.Build.0 = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Debug|x86.Build.0 = Debug|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|x64.ActiveCfg = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|x64.Build.0 = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|x86.ActiveCfg = Release|Any CPU
+		{B3889293-E83D-44F0-8F49-161FD4D63569}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3889293-E83D-44F0-8F49-161FD4D63569} = {5E7E9411-577E-47B2-8011-F0D7A588F917}
 	EndGlobalSection
 EndGlobal
