@@ -28,8 +28,6 @@ jobs:
       - name: Tag Release
         uses: fregante/daily-version-action@v1
         id: daily-version
-        outputs:
-          version: ${{ steps.daily-version.outputs.version }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
