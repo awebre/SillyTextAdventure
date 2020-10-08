@@ -28,14 +28,16 @@ jobs:
       - name: Tag Release
         uses: fregante/daily-version-action@v1
         id: daily-version
+        outputs:
+          version: ${{ steps.daily-version.outputs.version }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.daily-version.outputs.version }}
+          release_name: Release ${{ steps.daily-version.outputs.version }}
           body: |
             This release includes bug fixes and patches
           draft: false
