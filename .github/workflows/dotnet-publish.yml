@@ -22,6 +22,9 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Publish
         run: dotnet publish --configuration Release --no-restore --output publish
+      - name: Package
+        run: |
+          zip -r publish.zip publish/
       - name: Tag Release
         uses: fregante/daily-version-action@v1
         id: daily-version
@@ -44,6 +47,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./publish/SillyTextAdventure.exe
-          asset_name: SillyTextAdventure.exe
-          asset_content_type: application/exe
+          asset_path: ./publish.zip
+          asset_name: publish.zip
+          asset_content_type: application/zip
