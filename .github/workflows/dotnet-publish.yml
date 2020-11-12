@@ -25,19 +25,20 @@ jobs:
       - name: Package
         run: |
           zip -r publish.zip publish/
-      - name: Tag Release
-        uses: fregante/daily-version-action@v1
-        id: daily-version
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ steps.daily-version.outputs.version }}
-          release_name: Release ${{ steps.daily-version.outputs.version }}
-          body: |
-            This release includes bug fixes and patches
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          release_name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{steps.tag_version.outputs.changelog}}
           draft: false
           prerelease: false
       - name: Upload Release Asset
